@@ -4,6 +4,7 @@ int cont;
 int sumarcont;
 int segundos;
 
+boolean reiniciar= false;
 int botonX=500;
 int botonY=400;
 int botonAncho=100;
@@ -85,13 +86,16 @@ text("REINICIAR",570,430);
 }
  }
  void mousePressed(){
+ if ( reiniciar && mouseX>= botonX && mouseX<= botonX+botonAncho&& mouseY >=botonY && mouseY<=botonY+botonAlto){
    segundos=0;
    cont=0;
    sumarcont=1;
    mivariable=300;
- if(segundos==3){
+   reiniciar= false;
+  } else if(segundos>10){
+    reiniciar= true;
  }
- if (segundos==3 && mouseX>= botonX && mouseX<= botonX+botonAncho&& mouseY >=botonY && mouseY<=botonY+botonAlto){
- }
+ 
  }
    
+  
